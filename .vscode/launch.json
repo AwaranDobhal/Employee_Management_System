@@ -1,0 +1,21 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "EmployeeManagementSystemApplication",
+            "request": "launch",
+            "mainClass": "com.employeemanagementsystem.EmployeeManagementSystem.EmployeeManagementSystemApplication",
+            "projectName": ""
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-EmployeeManagementSystemApplication<EmployeeManagementSystem>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.employeemanagementsystem.EmployeeManagementSystem.EmployeeManagementSystemApplication",
+            "projectName": "EmployeeManagementSystem",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
