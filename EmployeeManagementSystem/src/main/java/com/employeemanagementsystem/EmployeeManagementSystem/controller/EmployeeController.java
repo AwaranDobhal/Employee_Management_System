@@ -21,7 +21,7 @@ import com.employeemanagementsystem.EmployeeManagementSystem.services.EmployeeSe
 public class EmployeeController {
     
     //EmployeeSerivce employeeSerivce = new EmployeeSerivceImpl();
-    //Dependcy Injection
+    //Dependency Injection
     @Autowired
     EmployeeService employeeService;
 
