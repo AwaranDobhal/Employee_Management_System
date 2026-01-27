@@ -1,5 +1,4 @@
 package com.employeemanagementsystem.EmployeeManagementSystem.services;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,25 +16,19 @@ public class EmployeeServiceImpl implements EmployeeService{
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    //List<Employee> employees= new ArrayList<>();
-
     @Override
     public String createEmployee(Employee employee) {
         EmployeeEntity employeeEntity = new EmployeeEntity();
         BeanUtils.copyProperties(employee, employeeEntity);        //copy data from source to destination means that employee(model) to employeeEntity(entity)
-
         employeeRepository.save(employeeEntity);
-       // employees.add(employee);
         return "Saved Successfully";
     }
 
     @Override
     public Employee readEmployee(Long id) {
-        EmployeeEntity employeeEntity = employeeRepository.findById(id).get();
-     
+        EmployeeEntity employeeEntity = employeeRepository.findById(id).get();    
         Employee employee = new Employee();
-        BeanUtils.copyProperties(employeeEntity,employee);
-
+        BeanUtils.copyProperties(employeeEntity, employee);
         return employee;
     }
 
@@ -51,7 +44,6 @@ public class EmployeeServiceImpl implements EmployeeService{
             emp.setPhone(employeeEntity.getPhone());
             emp.setDepartment(employeeEntity.getDepartment());
             emp.setPosition(employeeEntity.getPosition());
-          
             employees.add(emp);
         }
         return employees;     
@@ -66,16 +58,13 @@ public class EmployeeServiceImpl implements EmployeeService{
 
     @Override
     public String updateEmployee(Long id, Employee employee) {
-        EmployeeEntity existingEmployee = employeeRepository.findById(id).get();
-        
+        EmployeeEntity existingEmployee = employeeRepository.findById(id).get();       
         existingEmployee.setEmail(employee.getEmail());
         existingEmployee.setName(employee.getName());
         existingEmployee.setPhone(employee.getPhone());
         existingEmployee.setDepartment(employee.getDepartment());
-        existingEmployee.setPosition(employee.getPosition());
-        
-        employeeRepository.save(existingEmployee);
-        
+        existingEmployee.setPosition(employee.getPosition());       
+        employeeRepository.save(existingEmployee);       
        return "Update Succesfully";
     }
 }

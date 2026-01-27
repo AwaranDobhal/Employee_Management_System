@@ -20,7 +20,6 @@ import com.employeemanagementsystem.EmployeeManagementSystem.services.EmployeeSe
 @CrossOrigin("http://localhost:5173/")
 public class EmployeeController {
     
-    //EmployeeSerivce employeeSerivce = new EmployeeSerivceImpl();
     //Dependency Injection
     @Autowired
     EmployeeService employeeService;
